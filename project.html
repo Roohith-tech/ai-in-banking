@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roohith's AI Project Pages</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #0b0f19;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* Loading Welcome Screen Overlay */
+        #welcome-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #0f172a;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 1s ease-out, visibility 1s;
+        }
+        .welcome-text {
+            font-size: 36px;
+            color: #38bdf8;
+            font-weight: bold;
+            letter-spacing: 2px;
+            animation: pulse 1.5s infinite alternate;
+            text-align: center;
+            padding: 20px;
+        }
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #334155;
+            border-top: 5px solid #38bdf8;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-top: 20px;
+        }
+
+        /* Main Content Container */
+        .content-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        h1 { color: #38bdf8; margin-bottom: 40px; font-size: 32px; }
+
+        /* Flowchart Styling */
+        .flowchart {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+        .flow-node {
+            background: #1e293b;
+            border: 2px solid #475569;
+            border-radius: 12px;
+            padding: 20px;
+            width: 85%;
+            margin: 15px 0;
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+        .flow-node:hover {
+            border-color: #38bdf8;
+            transform: scale(1.02);
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+        }
+        .node-title {
+            font-size: 18px;
+            color: #38bdf8;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .node-desc {
+            font-size: 14px;
+            color: #cbd5e1;
+            line-height: 1.5;
+        }
+        
+        /* Flowchart Connecting Arrows */
+        .arrow {
+            font-size: 24px;
+            color: #64748b;
+            margin: 5px 0;
+            animation: bounce 2s infinite;
+        }
+
+        /* Final Takeover Stage Highlight */
+        .takeover {
+            border: 2px solid #ef4444 !important;
+            background: linear-gradient(135deg, #1e293b 0%, #450a0a 100%);
+        }
+        .takeover .node-title { color: #ef4444; }
+
+        /* Animations */
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        @keyframes pulse { from { opacity: 0.6; } to { opacity: 1; } }
+        @keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translateY(0); } 40% { transform: translateY(-8px); } 60% { transform: translateY(-4px); } }
+    </style>
+</head>
+<body>
+
+    <!-- 1. WELCOME LOADING SCREEN -->
+    <div id="welcome-screen">
+        <div class="welcome-text">Welcome to Roohith's Pages</div>
+        <div class="spinner"></div>
+    </div>
+
+    <!-- 2. MAIN FLOWCHART CONTENT -->
+    <div class="content-container">
+        <h1>How AI is Taking Over Human Banking</h1>
+        
+        <div class="flowchart">
+            
+            <!-- Stage 1 -->
+            <div class="flow-node">
+                <div class="node-title">Stage 1: The Past (Traditional Human Banking)</div>
+                <div class="node-desc">Long queues, heavy paperwork, restricted working hours, and manual calculations. Humans managed every single ledger entry and cash counter.</div>
+            </div>
+            
+            <div class="arrow">↓</div>
+            
+            <!-- Stage 2 -->
+            <div class="flow-node">
+                <div class="node-title">Stage 2: Introduction of Automation & AI</div>
+                <div class="node-desc">AI enters the system through smart ATMs, basic digital computing, and automated data entry to clear up slow-moving office tasks.</div>
+            </div>
+            
+            <div class="arrow">↓</div>
+            
+            <!-- Stage 3 -->
+            <div class="flow-node">
+                <div class="node-title">Stage 3: Present Day Hybrid Banking</div>
+                <div class="node-desc">AI Chatbots handle instant customer support, Machine Learning detects credit card fraud in real-time, and mobile apps replace physical branch visits.</div>
+            </div>
+            
+            <div class="arrow">↓</div>
+            
+            <!-- Stage 4 -->
+            <div class="flow-node takeover">
+                <div class="node-title">Stage 4: Future Total Autonomous AI Takeover</div>
+                <div class="node-desc">Human roles are entirely replaced by intelligent AI agents. Supercomputers handle global asset trading, predictive AI grants loans instantly without bias, and digital currencies erase the need for human cashiers.</div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const welcomeScreen = document.getElementById('welcome-screen');
+                welcomeScreen.style.opacity = '0';
+                welcomeScreen.style.visibility = 'hidden';
+            }, 3000); // 3 seconds delay
+        });
+    </script>
+
+</body>
+</html>
